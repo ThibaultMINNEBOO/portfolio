@@ -1,4 +1,16 @@
-@import './_reset.css';
+:root {
+    --primary-color: #e55039;
+    --secondary-color: #AD59F8;
+    --dark-color: #3A001E;
+}
+
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+}
 
 h1 {
     text-transform: uppercase;
