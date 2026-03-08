@@ -1,0 +1,141 @@
+@import "tailwindcss";
+
+/* ── Custom theme ──────────────────────────────────────── */
+@theme {
+  --font-heading: "Outfit", ui-sans-serif, sans-serif;
+  --font-code: "JetBrains Mono", ui-monospace, monospace;
+}
+
+/* ── Base styles ───────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #0a0a0a;
+  color: #e5e5e5;
+  font-family: "Outfit", sans-serif;
+}
+
+/* ── Custom scrollbar ──────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #7c3aed;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8b5cf6;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #7c3aed #0a0a0a;
+}
+
+/* ── Grain overlay ─────────────────────────────────────── */
+.grain::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 128px 128px;
+}
+
+/* ── Animations ────────────────────────────────────────── */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes blob-drift {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -40px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.7s ease-out both;
+}
+
+.animate-blob {
+  animation: blob-drift 8s ease-in-out infinite;
+}
+
+.animate-blob-delay {
+  animation: blob-drift 8s ease-in-out 2s infinite;
+}
+
+.animate-blob-delay-2 {
+  animation: blob-drift 8s ease-in-out 4s infinite;
+}
+
+.animate-pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+/* ── Stagger children ──────────────────────────────────── */
+.stagger-children > * {
+  opacity: 0;
+}
+.stagger-children.visible > *:nth-child(1)  { animation: fade-in-up 0.5s 0.05s ease-out both; }
+.stagger-children.visible > *:nth-child(2)  { animation: fade-in-up 0.5s 0.10s ease-out both; }
+.stagger-children.visible > *:nth-child(3)  { animation: fade-in-up 0.5s 0.15s ease-out both; }
+.stagger-children.visible > *:nth-child(4)  { animation: fade-in-up 0.5s 0.20s ease-out both; }
+.stagger-children.visible > *:nth-child(5)  { animation: fade-in-up 0.5s 0.25s ease-out both; }
+.stagger-children.visible > *:nth-child(6)  { animation: fade-in-up 0.5s 0.30s ease-out both; }
+.stagger-children.visible > *:nth-child(7)  { animation: fade-in-up 0.5s 0.35s ease-out both; }
+.stagger-children.visible > *:nth-child(8)  { animation: fade-in-up 0.5s 0.40s ease-out both; }
+.stagger-children.visible > *:nth-child(9)  { animation: fade-in-up 0.5s 0.45s ease-out both; }
+.stagger-children.visible > *:nth-child(10) { animation: fade-in-up 0.5s 0.50s ease-out both; }
+.stagger-children.visible > *:nth-child(11) { animation: fade-in-up 0.5s 0.55s ease-out both; }
+.stagger-children.visible > *:nth-child(12) { animation: fade-in-up 0.5s 0.60s ease-out both; }
+
+/* ── Grid pattern ──────────────────────────────────────── */
+.grid-pattern {
+  background-image:
+    linear-gradient(rgba(124, 58, 237, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124, 58, 237, 0.05) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+/* ── Glow button ───────────────────────────────────────── */
+.glow-violet {
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+}
+.glow-violet:hover {
+  box-shadow: 0 0 40px rgba(139, 92, 246, 0.5);
+}
