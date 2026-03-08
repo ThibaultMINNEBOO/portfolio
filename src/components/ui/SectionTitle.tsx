@@ -17,7 +17,7 @@ export default function SectionTitle({ children, id }: SectionTitleProps) {
         visible ? "animate-fade-in-up" : "opacity-0 translate-y-8"
       }`}
     >
-      <h2 className="font-heading text-4xl md:text-5xl font-extrabold tracking-tight text-white">
+      <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white">
         {children}
       </h2>
       <div className="mt-4 h-1 w-20 rounded-full bg-gradient-to-r from-violet-500 to-cyan-400" />

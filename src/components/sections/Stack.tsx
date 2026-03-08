@@ -8,16 +8,13 @@ export default function Stack() {
   const { ref, visible } = useInView<HTMLDivElement>();
 
   return (
-    <section className="py-24 md:py-32 px-6" id="stack">
+    <section className="py-20 sm:py-24 md:py-32 px-4 sm:px-6" id="stack">
       <div className="mx-auto max-w-6xl">
         <SectionTitle>Tech Stack</SectionTitle>
 
         <div
           ref={ref}
-          className="grid grid-cols-1 md:grid-cols-2 gap-10"
-          style={{
-            gridTemplateColumns: `repeat(${Math.min(Object.keys(data.stack).length, 4)}, minmax(0, 1fr))`,
-          }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10"
         >
           {Object.entries(data.stack).map(([category, techs], catIdx) => (
             <div

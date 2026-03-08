@@ -34,8 +34,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         style={{ background: `linear-gradient(90deg, ${firstColor}, ${secondColor})` }}
       />
 
-      <div className="p-6 md:p-8">
-        <h3 className="font-heading text-xl font-bold text-white mb-3">
+      <div className="p-5 sm:p-6 md:p-8">
+        <h3 className="font-heading text-lg sm:text-xl font-bold text-white mb-3">
           {project.title}
         </h3>
         <p className="text-neutral-400 text-sm leading-relaxed mb-5">

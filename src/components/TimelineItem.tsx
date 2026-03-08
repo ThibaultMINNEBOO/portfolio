@@ -29,8 +29,8 @@ export default function TimelineItem({ exp, index }: TimelineItemProps) {
       />
 
       {/* Card */}
-      <div className="rounded-2xl border border-white/10 bg-neutral-900/60 backdrop-blur-sm p-6 md:p-8 transition-all duration-300 hover:border-white/20 hover:bg-neutral-900/80">
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3">
+      <div className="rounded-2xl border border-white/10 bg-neutral-900/60 backdrop-blur-sm p-5 sm:p-6 md:p-8 transition-all duration-300 hover:border-white/20 hover:bg-neutral-900/80">
+        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-3">
           <div>
             <h3 className="font-heading text-lg font-bold text-white">
               {exp.role}

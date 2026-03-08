@@ -4,11 +4,11 @@ import SectionTitle from "../ui/SectionTitle";
 /** Contact section — email CTA + social links */
 export default function Contact() {
   return (
-    <section className="py-24 md:py-32 px-6" id="contact">
+    <section className="py-20 sm:py-24 md:py-32 px-4 sm:px-6" id="contact">
       <div className="mx-auto max-w-2xl text-center">
         <SectionTitle>Contact</SectionTitle>
 
-        <p className="text-neutral-400 text-lg leading-relaxed mb-10">
+        <p className="text-neutral-400 text-base sm:text-lg leading-relaxed mb-10">
           Un projet en tête ? Une question ? N'hésitez pas à me contacter, je
           suis toujours ouvert aux nouvelles opportunités.
         </p>
@@ -16,20 +16,20 @@ export default function Contact() {
         {/* Email CTA */}
         <a
           href={`mailto:${data.email}`}
-          className="inline-flex items-center gap-3 rounded-xl bg-violet-600 px-10 py-4 font-heading text-lg font-bold text-white transition-all duration-300 hover:bg-violet-500 glow-violet mb-10"
+          className="inline-flex items-center gap-3 rounded-xl bg-violet-600 px-6 sm:px-10 py-4 font-heading text-sm sm:text-lg font-bold text-white transition-all duration-300 hover:bg-violet-500 glow-violet mb-10 max-w-full"
         >
-          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <svg className="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
               d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
             />
           </svg>
-          {data.email}
+          <span className="truncate">{data.email}</span>
         </a>
 
         {/* Social links */}
-        <div className="flex items-center justify-center gap-4">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
             href={data.github}
             target="_blank"

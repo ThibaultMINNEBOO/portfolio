@@ -5,7 +5,7 @@ import TimelineItem from "../TimelineItem";
 /** Experience section with vertical timeline */
 export default function Experience() {
   return (
-    <section className="py-24 md:py-32 px-6" id="experience">
+    <section className="py-20 sm:py-24 md:py-32 px-4 sm:px-6" id="experience">
       <div className="mx-auto max-w-3xl">
         <SectionTitle>Expérience</SectionTitle>
 
